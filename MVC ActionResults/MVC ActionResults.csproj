@@ -143,9 +143,38 @@
     <Compile Include="Migrations\202004161107147_IntialModel.designer.cs">
       <DependentUpon>202004161107147_IntialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004161142031_IsSubscribedtoCustomer.cs" />
+    <Compile Include="Migrations\202004161142031_IsSubscribedtoCustomer.designer.cs">
+      <DependentUpon>202004161142031_IsSubscribedtoCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004161150187_AddMembershipType.cs" />
+    <Compile Include="Migrations\202004161150187_AddMembershipType.designer.cs">
+      <DependentUpon>202004161150187_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004171140108_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\202004171140108_PopulateMembershipTypes.designer.cs">
+      <DependentUpon>202004171140108_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004171151105_AddDataAnnotationstoCustomers.cs" />
+    <Compile Include="Migrations\202004171151105_AddDataAnnotationstoCustomers.designer.cs">
+      <DependentUpon>202004171151105_AddDataAnnotationstoCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004171338485_AddingNamePropertyToMembership.cs" />
+    <Compile Include="Migrations\202004171338485_AddingNamePropertyToMembership.designer.cs">
+      <DependentUpon>202004171338485_AddingNamePropertyToMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004171632351_AddingBirthDatePropertyToCustomer.cs" />
+    <Compile Include="Migrations\202004171632351_AddingBirthDatePropertyToCustomer.designer.cs">
+      <DependentUpon>202004171632351_AddingBirthDatePropertyToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004171637499_updatingCustomerDBforDateofBirth.cs" />
+    <Compile Include="Migrations\202004171637499_updatingCustomerDBforDateofBirth.designer.cs">
+      <DependentUpon>202004171637499_updatingCustomerDBforDateofBirth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\MembershipTypes.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
@@ -198,9 +227,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Vidly.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Customer\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -217,6 +244,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202004161107147_IntialModel.resx">
       <DependentUpon>202004161107147_IntialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161142031_IsSubscribedtoCustomer.resx">
+      <DependentUpon>202004161142031_IsSubscribedtoCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161150187_AddMembershipType.resx">
+      <DependentUpon>202004161150187_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171140108_PopulateMembershipTypes.resx">
+      <DependentUpon>202004171140108_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171151105_AddDataAnnotationstoCustomers.resx">
+      <DependentUpon>202004171151105_AddDataAnnotationstoCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171338485_AddingNamePropertyToMembership.resx">
+      <DependentUpon>202004171338485_AddingNamePropertyToMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171632351_AddingBirthDatePropertyToCustomer.resx">
+      <DependentUpon>202004171632351_AddingBirthDatePropertyToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004171637499_updatingCustomerDBforDateofBirth.resx">
+      <DependentUpon>202004171637499_updatingCustomerDBforDateofBirth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

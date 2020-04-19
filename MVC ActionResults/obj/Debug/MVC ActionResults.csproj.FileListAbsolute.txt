@@ -84,3 +84,10 @@ D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\bin\Microsoft.As
 D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.IntialModel.resources
 D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC ActionResults.csproj.GenerateResource.cache
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.IsSubscribedtoCustomer.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddMembershipType.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.PopulateMembershipTypes.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddDataAnnotationstoCustomers.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingNamePropertyToMembership.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingBirthDatePropertyToCustomer.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.updatingCustomerDBforDateofBirth.resources

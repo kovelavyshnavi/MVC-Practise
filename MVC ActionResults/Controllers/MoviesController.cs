@@ -12,7 +12,7 @@ namespace MVC_ActionResults.Controllers
     {
         // GET: Movie
         
-            [Route("Movies")]
+        [Route("Movies")]
         public ViewResult Index()
         {
             var movies = GetMovies();
