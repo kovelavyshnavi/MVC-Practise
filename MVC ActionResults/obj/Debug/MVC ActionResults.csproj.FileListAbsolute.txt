@@ -91,3 +91,5 @@ D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_Ac
 D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingNamePropertyToMembership.resources
 D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingBirthDatePropertyToCustomer.resources
 D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.updatingCustomerDBforDateofBirth.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingGenreTabletoDB.resources
+D:\Practise C#\MVC Practise\MVC ActionResults\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.InsertingGenreintoTable.resources

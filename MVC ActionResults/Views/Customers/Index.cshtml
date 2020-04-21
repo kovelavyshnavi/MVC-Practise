@@ -5,7 +5,8 @@
 }
 
 <h2>Customers!!</h2>
-<table class="table table-bordered table-hover">
+<input type="button" value="Add Customer" class="btn btn-primary" style="float:right;margin-top: -40px;" onclick="@("window.location.href='" + @Url.Action("CustomerForm", "Customers") + "'");" />
+<table class="table table-bordered table-hover" style="margin-top: 2%;">
     <thead>
         <tr>
             <th>Customer</th>
@@ -15,10 +16,11 @@
     <tbody>
         @foreach (var customer in Model)
         {
-        <tr>
-            <td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>
-            <td>@customer.MembershipType.Name</td>
-        </tr>
+            <tr>
+                @*<td>@Html.ActionLink(customer.Name, "Details", "Customers", new { id = customer.Id }, null)</td>*@
+                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
+                <td>@customer.MembershipType.Name</td>
+            </tr>
         }
     </tbody>
 </table>

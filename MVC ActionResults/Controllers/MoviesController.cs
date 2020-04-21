@@ -1,33 +1,81 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using MVC_ActionResults.Models;
 using MVC_ActionResults.ViewModels;
+using Vidly.Models;
 
 namespace MVC_ActionResults.Controllers
 {
     public class MoviesController : Controller
     {
         // GET: Movie
-        
+
+
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();   
+        }
+
         [Route("Movies")]
         public ViewResult Index()
         {
-            var movies = GetMovies();
+            var movies = _context.Movies.Include(a=>a.Genre).ToList();
+
             return View(movies);
         }
 
-
-        public IEnumerable<Movie> GetMovies()
+        //Getting Genres from Db and binding to dropdown through viewmodel
+        public ActionResult MoviesForm()
         {
-            return new List<Movie> {
-                new Movie{Id=1, Name="Titanic"},
-                new Movie{Id=2, Name="Captain Marvel"},
-                new Movie{Id=3, Name="Avengers"},
-            };
+            var genres = _context.Genres.ToList();
+
+            var movieViewModel = new MovieViewModel();
+            {
+                movieViewModel.Genres = genres;
+            }
+            return View(movieViewModel);
         }
+
+
+        //Used  this method for both add & edit movie records
+        [HttpPost]
+        public ActionResult Save(Movies movies)
+        {
+            if (movies.Id == 0)
+            {
+                _context.Movies.Add(movies);
+            }
+            else
+            {
+               var moviesinDB= _context.Movies.Single(c => c.Id == movies.Id);
+                moviesinDB.Name=movies.Name;
+                moviesinDB.GenreId=movies.GenreId;
+                moviesinDB.ReleaseDate=movies.ReleaseDate ;
+                moviesinDB.DateAdded=movies.DateAdded ;
+                moviesinDB.NumberInStock=movies.NumberInStock ;
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index","Movies");
+        }
+
+        //public IEnumerable<Movies> GetMovies()
+        //{
+        //    return new List<Movies> {
+        //        new Movies{Id=1, Name="Titanic"},
+        //        new Movies{Id=2, Name="Captain Marvel"},
+        //        new Movies{Id=3, Name="Avengers"},
+        //    };
+        //}
 
 
         public ActionResult Vidly()
@@ -35,11 +83,23 @@ namespace MVC_ActionResults.Controllers
             return View();
         }
 
-        [Route("movies/released/{year}/{month:regex(\\d{4}):range(1,12)}")]
-        public ActionResult ByReleasedDate(int year, int month)
+        public ActionResult Details(int? id)
         {
-            return Content(year + "/" + month); 
+            var movie = _context.Movies.Include(c => c.Genre).SingleOrDefault(c => c.Id == id);
+            if (movie == null)
+                return HttpNotFound();
+            return View(movie);
+        }
 
+        public ActionResult Edit(int id)
+        {
+            var movies = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var viewmodel = new MovieViewModel();
+            {
+                viewmodel.Movies = movies;
+                viewmodel.Genres = _context.Genres.ToList();
+            }
+            return View("MoviesForm",viewmodel);
         }
     }
 }

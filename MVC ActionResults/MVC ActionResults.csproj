@@ -171,12 +171,23 @@
     <Compile Include="Migrations\202004171637499_updatingCustomerDBforDateofBirth.designer.cs">
       <DependentUpon>202004171637499_updatingCustomerDBforDateofBirth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004191155332_AddingGenreTabletoDB.cs" />
+    <Compile Include="Migrations\202004191155332_AddingGenreTabletoDB.designer.cs">
+      <DependentUpon>202004191155332_AddingGenreTabletoDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004191202034_InsertingGenreintoTable.cs" />
+    <Compile Include="Migrations\202004191202034_InsertingGenreintoTable.designer.cs">
+      <DependentUpon>202004191202034_InsertingGenreintoTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Genres.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MembershipTypes.cs" />
-    <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Movies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\MovieViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +237,9 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Vidly.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\MoviesForm.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -265,6 +279,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004171637499_updatingCustomerDBforDateofBirth.resx">
       <DependentUpon>202004171637499_updatingCustomerDBforDateofBirth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004191155332_AddingGenreTabletoDB.resx">
+      <DependentUpon>202004191155332_AddingGenreTabletoDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004191202034_InsertingGenreintoTable.resx">
+      <DependentUpon>202004191202034_InsertingGenreintoTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

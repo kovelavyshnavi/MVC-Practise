@@ -8,7 +8,7 @@ namespace MVC_ActionResults.ViewModels
 {
     public class RandomMovieViewModel
     {
-        public List<Movie> Movie { get; set; }
+        public List<Movies> Movie { get; set; }
         public List<Customers> Customers { get; set; }
     }
 }
