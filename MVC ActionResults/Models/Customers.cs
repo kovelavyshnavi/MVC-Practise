@@ -8,6 +8,7 @@ namespace MVC_ActionResults.Models
 {
     public class Customers
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -22,6 +23,7 @@ namespace MVC_ActionResults.Models
         public byte MembershipTypeId { get; set; }
 
         [Display(Name="Date Of Birth")]
+        [Min18AgeIfAMember.ValidBirthDate]
         public DateTime? Birthdate { get; set; }
     }
 }

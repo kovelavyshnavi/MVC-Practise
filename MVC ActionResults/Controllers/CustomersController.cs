@@ -37,10 +37,11 @@ namespace MVC_ActionResults.Controllers
         public ActionResult CustomerForm()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var customerViewModel = new CustomerViewModel();
+            var customerViewModel = new CustomerViewModel
             {
-                customerViewModel.MembershipTypes = membershipTypes;
-            }
+                Customers = new Customers(),
+                MembershipTypes = membershipTypes
+            };
             return View(customerViewModel);
         }
 
@@ -49,8 +50,9 @@ namespace MVC_ActionResults.Controllers
         public ActionResult Save(Customers customers)
         {
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
                 var viewmodel = new CustomerViewModel
                 {
                     Customers = customers,
