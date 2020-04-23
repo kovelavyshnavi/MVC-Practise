@@ -11,7 +11,6 @@ namespace MVC_ActionResults.ViewModels
     {
        // public Movies Movies { get; set; }
 
-
         public int? Id { get; set; }
 
         [Required]

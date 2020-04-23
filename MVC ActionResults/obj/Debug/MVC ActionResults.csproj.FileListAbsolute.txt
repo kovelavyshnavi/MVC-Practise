@@ -189,3 +189,9 @@ D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionR
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionResults.dll
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionResults.pdb
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingRequiredFieldstoMovieclass.resources
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Net.Http.Formatting.dll
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.dll
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.WebHost.dll
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Net.Http.Formatting.xml
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.xml
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.WebHost.xml
