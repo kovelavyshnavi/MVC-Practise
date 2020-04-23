@@ -188,3 +188,4 @@ D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionR
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionResults.csproj.CopyComplete
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionResults.dll
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC ActionResults.pdb
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\obj\Debug\MVC_ActionResults.Migrations.AddingRequiredFieldstoMovieclass.resources

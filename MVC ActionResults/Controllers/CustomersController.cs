@@ -25,6 +25,7 @@ namespace MVC_ActionResults.Controllers
             _context.Dispose();
         }
 
+        //Get all the customer details in pageload
         [Route("Customers")]
         public ViewResult Index()
         {
@@ -33,6 +34,7 @@ namespace MVC_ActionResults.Controllers
             return View(customers);
         }
 
+        //Adding the customer details
         //For MemberShipType Dropdown
         public ActionResult CustomerForm()
         {
@@ -46,7 +48,10 @@ namespace MVC_ActionResults.Controllers
         }
 
 
+        //Adding and Updating the customer details into DB
+
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customers customers)
         {
 
@@ -100,6 +105,8 @@ namespace MVC_ActionResults.Controllers
                 return HttpNotFound();
             return View(customer);
         }
+
+        //Editing the Customer details
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);

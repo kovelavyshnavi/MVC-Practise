@@ -15,7 +15,8 @@ namespace MVC_ActionResults.Models
             {
                 var customer = (Customers)validationContext.ObjectInstance;
 
-                if (customer.MembershipTypeId == 1)
+                if (customer.MembershipTypeId == MembershipTypes.Unknown ||
+                    customer.MembershipTypeId == MembershipTypes.PayAsYouGo)
                     return ValidationResult.Success;
 
                 if (customer.Birthdate == null)

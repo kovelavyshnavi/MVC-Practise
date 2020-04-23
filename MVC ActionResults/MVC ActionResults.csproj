@@ -179,6 +179,10 @@
     <Compile Include="Migrations\202004191202034_InsertingGenreintoTable.designer.cs">
       <DependentUpon>202004191202034_InsertingGenreintoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004230648481_AddingRequiredFieldstoMovieclass.cs" />
+    <Compile Include="Migrations\202004230648481_AddingRequiredFieldstoMovieclass.designer.cs">
+      <DependentUpon>202004230648481_AddingRequiredFieldstoMovieclass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Genres.cs" />
@@ -286,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004191202034_InsertingGenreintoTable.resx">
       <DependentUpon>202004191202034_InsertingGenreintoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004230648481_AddingRequiredFieldstoMovieclass.resx">
+      <DependentUpon>202004230648481_AddingRequiredFieldstoMovieclass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

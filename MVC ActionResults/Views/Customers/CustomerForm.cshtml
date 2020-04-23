@@ -8,23 +8,24 @@
 
 @using (@Html.BeginForm("Save", "Customers"))
 {
-   
+
     @Html.ValidationSummary(true)
     <div class="form-group">
         @Html.LabelFor(m => m.Customers.Name)
         @Html.TextBoxFor(m => m.Customers.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Customers.Name, "", new { @class = "text-danger" })
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Customers.Birthdate)
-        @Html.TextBoxFor(m => m.Customers.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Customers.Birthdate, "", new { @class = "text-danger" })
-    </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Customers.MembershipTypeId)
         @Html.DropDownListFor(m => m.Customers.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select MemberShipType", new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Customers.MembershipTypeId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customers.Birthdate)
+        @Html.TextBoxFor(m => m.Customers.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customers.Birthdate, "", new { @class = "text-danger" })
     </div>
 
     <div class="checkbox">
@@ -34,6 +35,7 @@
     </div>
 
     @Html.HiddenFor(m => m.Customers.Id)
+    @Html.AntiForgeryToken()
 
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Save</button>
@@ -43,7 +45,7 @@
 
 }
 
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/jqueryval")
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

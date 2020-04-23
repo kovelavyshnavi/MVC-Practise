@@ -49,10 +49,27 @@ namespace MVC_ActionResults.Controllers
 
         //Used  this method for both add & edit movie records
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movies movies)
         {
+            if(!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
+                var viewModels = new MovieViewModel(movies)
+                {
+                    Id=movies.Id,
+                    Name=movies.Name,
+                    ReleaseDate=movies.ReleaseDate,
+                    GenreId=movies.GenreId,
+                    NumberInStock=movies.NumberInStock,
+                    Genres = _context.Genres.ToList()
+                };
+                return View("MoviesForm", viewModels);
+            }
+
             if (movies.Id == 0)
             {
+                movies.DateAdded = DateTime.Now;
                 _context.Movies.Add(movies);
             }
             else
@@ -94,9 +111,9 @@ namespace MVC_ActionResults.Controllers
         public ActionResult Edit(int id)
         {
             var movies = _context.Movies.SingleOrDefault(c => c.Id == id);
-            var viewmodel = new MovieViewModel();
+            var viewmodel = new MovieViewModel(movies);
             {
-                viewmodel.Movies = movies;
+                //viewmodel.Movies = movies;
                 viewmodel.Genres = _context.Genres.ToList();
             }
             return View("MoviesForm",viewmodel);
