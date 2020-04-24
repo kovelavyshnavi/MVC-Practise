@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using MVC_ActionResults.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +13,10 @@ namespace MVC_ActionResults
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        
         protected void Application_Start()
         {
+            Mapper.Initialize(c => c.AddProfile<Mapping_Profile>());
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

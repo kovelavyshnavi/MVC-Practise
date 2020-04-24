@@ -7,8 +7,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 <style>
     .alignment {
         float: right;
@@ -20,20 +18,71 @@
 <p>
     @Html.ActionLink("New Movie", "MoviesForm", "Movies", null, new { @class = "btn btn-primary alignment" })
 </p>
-<table class="table table-bordered table-hover">
+<table id="movies" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Movie</th>
             <th>Genre</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var movie in Model)
+        @*@foreach (var movie in Model)
         {
-            <tr>
-                <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
-                <td>@movie.Genre.Name</td>
-            </tr>
-        }
+        <tr>
+            <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new { id = movie.Id }, null)</td>
+            <td>@movie.Genre.Name</td>
+            <td><button data-movie-id ="@movie.Id" class="btn-link js-delete">Delete</button></td>
+        </tr>
+        }*@
     </tbody>
 </table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var movieTable = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc:""
+                },
+                columns: [
+                    {
+                        data: "Name",
+                        render: function (data, type, movie) {
+                            return "<a href='/movies/edit/" + movie.Id + "'>" + data + "</a>";
+                        }
+                    },
+                    {
+                        data:"Genre.Name"
+                    },
+                    {
+                        data: "Id",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
+                        }
+                    }
+
+                ]
+
+
+            });
+            $("#movies").on("click",".js-delete" , function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure want to delete this movie?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/movies/" + button.attr("data-movie-id"),
+                            method: "DELETE",
+                            success: function () {
+                                movieTable.row(button.parents("tr")).remove().draw();
+                            }
+
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    }

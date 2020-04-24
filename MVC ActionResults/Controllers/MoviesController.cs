@@ -29,9 +29,9 @@ namespace MVC_ActionResults.Controllers
         [Route("Movies")]
         public ViewResult Index()
         {
-            var movies = _context.Movies.Include(a=>a.Genre).ToList();
+            //var movies = _context.Movies.Include(a=>a.Genre).ToList();
 
-            return View(movies);
+            return View();
         }
 
         //Getting Genres from Db and binding to dropdown through viewmodel

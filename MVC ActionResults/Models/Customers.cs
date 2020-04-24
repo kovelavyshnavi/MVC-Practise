@@ -23,7 +23,7 @@ namespace MVC_ActionResults.Models
         public byte MembershipTypeId { get; set; }
 
         [Display(Name="Date Of Birth")]
-        [Min18AgeIfAMember.ValidBirthDate]
+        //[Min18AgeIfAMember.ValidBirthDate]
         public DateTime? Birthdate { get; set; }
     }
 }

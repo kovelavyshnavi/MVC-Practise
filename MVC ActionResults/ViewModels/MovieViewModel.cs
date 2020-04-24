@@ -30,7 +30,7 @@ namespace MVC_ActionResults.ViewModels
         [Required]
         public byte? NumberInStock { get; set; }
 
-        public IEnumerable<Genres> Genres { get; set; }
+        public IEnumerable<Genre> Genres { get; set; }
 
 
         public string Title

@@ -14,7 +14,7 @@ namespace MVC_ActionResults.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        public Genres Genre { get; set; }
+        public Genre Genre { get; set; }
 
         [Display(Name = "Genre")]
         [Required]

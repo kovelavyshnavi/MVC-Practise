@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MVC_ActionResults.Models
 {
-    public class Genres
+    public class Genre
     {
         public byte Id { get; set; }
         [Required]

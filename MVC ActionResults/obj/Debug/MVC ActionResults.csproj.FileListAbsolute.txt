@@ -195,3 +195,5 @@ D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.W
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Net.Http.Formatting.xml
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.xml
 D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\System.Web.Http.WebHost.xml
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\AutoMapper.dll
+D:\Practise C#\MVCVidly_Git\MVC-Practise\MVC ActionResults\bin\AutoMapper.xml
