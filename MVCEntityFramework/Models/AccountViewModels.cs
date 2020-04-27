@@ -8,6 +8,16 @@ namespace MVCEntityFramework.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Driving License")]
+        public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Phone { get; set; }
+
+
     }
 
     public class ExternalLoginListViewModel
@@ -65,6 +75,15 @@ namespace MVCEntityFramework.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Driving License")]
+        public string DrivingLicense { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Phone { get; set; }
+
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -83,6 +102,7 @@ namespace MVCEntityFramework.Models
 
     public class ResetPasswordViewModel
     {
+       
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

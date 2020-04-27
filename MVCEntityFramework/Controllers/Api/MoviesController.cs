@@ -36,7 +36,8 @@ namespace MVCEntityFramework.Controllers.Api
 
             //POST /api/movies
             [System.Web.Http.HttpPost]
-            public IHttpActionResult CreateMovie(MovieDTO movieDTO)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult CreateMovie(MovieDTO movieDTO)
             {
                 if (!ModelState.IsValid)
                     return BadRequest();
@@ -72,7 +73,8 @@ namespace MVCEntityFramework.Controllers.Api
 
 
             [System.Web.Http.HttpPut]
-            public IHttpActionResult UpdateMovieDTO(int id, MovieDTO movieDTO)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult UpdateMovieDTO(int id, MovieDTO movieDTO)
             {
                 if (!ModelState.IsValid)
                     return BadRequest();
@@ -88,7 +90,8 @@ namespace MVCEntityFramework.Controllers.Api
 
             //DELETE /api/movies/1
             [System.Web.Http.HttpDelete]
-            public IHttpActionResult DeleteMovies(int Id)
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        public IHttpActionResult DeleteMovies(int Id)
             {
                 var moviesInDB = _context.Movies.SingleOrDefault(c => c.Id == Id);
                 if (moviesInDB == null)

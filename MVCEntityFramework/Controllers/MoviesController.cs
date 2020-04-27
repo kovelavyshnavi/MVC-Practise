@@ -30,11 +30,14 @@ namespace MVCEntityFramework.Controllers
         public ViewResult Index()
         {
             //var movies = _context.Movies.Include(a=>a.Genre).ToList();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("Index_old");
 
-            return View();
+            return View("ReadOnlyList");
         }
 
         //Getting Genres from Db and binding to dropdown through viewmodel
+        [Authorize(Roles =RoleName.CanManageMovies)]
         public ActionResult MoviesForm()
         {
             var genres = _context.Genres.ToList();
@@ -50,6 +53,7 @@ namespace MVCEntityFramework.Controllers
         //Used  this method for both add & edit movie records
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movies movies)
         {
             if(!ModelState.IsValid)
@@ -108,6 +112,7 @@ namespace MVCEntityFramework.Controllers
             return View(movie);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movies = _context.Movies.SingleOrDefault(c => c.Id == id);

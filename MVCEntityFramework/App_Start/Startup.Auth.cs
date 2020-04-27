@@ -54,9 +54,9 @@ namespace MVCEntityFramework
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "804363643421524",
+               appSecret: "d89beb2263d8e1f170896199cd05bfde");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

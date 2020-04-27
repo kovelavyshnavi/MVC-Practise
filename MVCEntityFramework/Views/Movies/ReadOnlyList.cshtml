@@ -1,0 +1,50 @@
+﻿
+@model IEnumerable<MVCEntityFramework.Models.Movies>
+
+
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .alignment {
+        float: right;
+        margin-top: -40px;
+    }
+</style>
+
+<h2>Movies!!</h2>
+<table id="movies" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var movieTable = $("#movies").DataTable({
+                ajax: {
+                    url: "/api/movies",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "Name",
+                    },
+                    {
+                        data: "Genre.Name"
+                    }
+                ]
+
+            });
+        });
+    </script>
+    }
