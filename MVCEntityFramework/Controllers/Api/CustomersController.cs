@@ -20,9 +20,25 @@ namespace MVCEntityFramework.Controllers.Api
         }
 
         //GET /api/customers
-        public IEnumerable<CustomerDTO> GetCustomers()
-       {
-            return _context.Customers.Include(c=>c.MembershipType).ToList().Select(Mapper.Map<Customers,CustomerDTO>);
+       // public IEnumerable<CustomerDTO> GetCustomers()
+       //{
+       //     return _context.Customers.Include(c=>c.MembershipType).ToList().Select(Mapper.Map<Customers,CustomerDTO>);
+       // }
+
+        // GET /api/customers
+        public IHttpActionResult GetCustomers(string query = null)
+        {
+            var customersQuery = _context.Customers
+                .Include(c => c.MembershipType);
+
+            if (!String.IsNullOrWhiteSpace(query))
+                customersQuery = customersQuery.Where(c => c.Name.Contains(query));
+
+            var customerDtos = customersQuery
+                .ToList()
+                .Select(Mapper.Map<Customers, CustomerDTO>);
+
+            return Ok(customerDtos);
         }
 
         //GET /api/customers/1

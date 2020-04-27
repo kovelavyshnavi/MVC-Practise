@@ -25,5 +25,6 @@ namespace MVCEntityFramework.Models
         [Display(Name="Date Of Birth")]
         //[Min18AgeIfAMember.ValidBirthDate]
         public DateTime? Birthdate { get; set; }
+
     }
 }

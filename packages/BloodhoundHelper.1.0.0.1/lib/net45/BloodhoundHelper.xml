@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BloodhoundHelper</name>
+    </assembly>
+    <members>
+        <member name="T:BloodhoundHelper.BloodhoundBaseAttribute">
+            <summary>
+            A base attribute class for the project.
+            </summary>
+        </member>
+        <member name="P:BloodhoundHelper.BloodhoundBaseAttribute.TypeId">
+            <summary>
+            The TypeId.
+            </summary>
+        </member>
+        <member name="T:BloodhoundHelper.BloodhoundDataAttribute">
+            <summary>
+            Specifies that the property will be provided as additional data in a Bloodhound result.
+            </summary>
+        </member>
+        <member name="T:BloodhoundHelper.BloodhoundFormatAttribute">
+            <summary>
+            A base class for providing a format ability to other attributes.
+            </summary>
+        </member>
+        <member name="P:BloodhoundHelper.BloodhoundFormatAttribute.Format">
+            <summary>
+            The string format to use for storing the data.
+            </summary>
+        </member>
+        <member name="P:BloodhoundHelper.BloodhoundDataAttribute.Name">
+            <summary>
+            The name used for the JSON object property the data will be stored in.
+            </summary>
+        </member>
+        <member name="T:BloodhoundHelper.BloodhoundProcessor">
+            <summary>
+            A helper class to provide support methods for transforming objects for use with Twitter's Typeahead and Bloodhound.
+            </summary>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.BuildJson(System.Object)">
+            <summary>
+            Returns a string containing JSON results ready to be sent to Bloodhound.
+            </summary>
+            <param name="obj">The object to create results for.</param>
+            <returns>A <c>string</c> containing results with specified key/values.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.BuildResults(System.Object)">
+            <summary>
+            Returns a dictionary array containing results ready to be serialized into a JSON response.
+            </summary>
+            <param name="obj">The object to create results for.</param>
+            <returns>An <c>IDictionary&lt;string, object&gt;[]</c> containing results with specified key/values.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.BuildResult(System.Object)">
+            <summary>
+            Creates a dictionary representing a single result.
+            </summary>
+            <param name="obj">The object to create a result for.</param>
+            <returns>An <c>IDictionary&lt;string, object&gt;</c> containing object properties as items.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.IsEnumerable(System.Object)">
+            <summary>
+            Determines if an object is enumerable.
+            </summary>
+            <param name="obj">The object to test.</param>
+            <returns>A <c>bool</c> indicating if the object is enumerable.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.GetData(System.Object)">
+            <summary>
+            Gets the data for a specified object stored in a Dictionary.
+            </summary>
+            <param name="obj">The object to get the data for.</param>
+            <returns>An <c>IDictionary&lt;string, object&gt;</c> containing the data for the specified object.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.GetValue(System.Object)">
+            <summary>
+            Gets the value for an object.
+            </summary>
+            <param name="obj">The object to fetch the value for.</param>
+            <returns>A string representing the value for the object.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.GetTokens(System.Object)">
+            <summary>
+            Gets an array of <c>String</c>'s representing the tokens of the object.
+            </summary>
+            <param name="obj">The object to fetch tokens for.</param>
+            <returns>An array of <c>String</c>'s representing the tokens of the object.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.GetBloodhoundTokenAttributesForProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the <c>BloodhoundTokenAttribute</c>'s which have been applied to the specified property.
+            </summary>
+            <param name="property">The property to get attributes for.</param>
+            <returns>An array of <c>BloodhoundTokenAttribute</c>'s.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.GetBloodhoundValueAttributesForProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the <c>BloodhoundValueAttribute</c>'s which have been applied to the specified property.
+            </summary>
+            <param name="property">The property to get attributes for.</param>
+            <returns>An array of <c>BloodhoundValueAttribute</c>'s.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.GetBloodhoundDataAttributesForProperty(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the <c>BloodhoundDataAttribute</c>'s which have been applied to the specified property.
+            </summary>
+            <param name="property">The property to get attributes for.</param>
+            <returns>An array of <c>BloodhoundDataAttribute</c>'s.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.IsConsideredPrimitive(System.Type)">
+            <summary>
+            Determines if an object is of a type which is considered primitive.
+            </summary>
+            <param name="type">The object to test.</param>
+            <returns>A <c>bool</c> indicating if the type is primitive or not.</returns>
+        </member>
+        <member name="M:BloodhoundHelper.BloodhoundProcessor.Search``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Searches the provided collection for objects with property values containing the query as indicated by the BloodhoundToken attributes.
+            </summary>
+            <typeparam name="TSource">The type of the objects to search.</typeparam>
+            <param name="source">The object collection to search.</param>
+            <param name="query">The string to be searched for.</param>
+            <returns>A collection of objects which match the criteria.</returns>
+        </member>
+        <member name="T:BloodhoundHelper.BloodhoundTokenAttribute">
+            <summary>
+            Specifies that the property will be used as a token in Bloodhound.
+            </summary>
+        </member>
+        <member name="T:BloodhoundHelper.BloodhoundValueAttribute">
+            <summary>
+            Specifies that the property will be used as the value for a Bloodhound result.
+            </summary>
+        </member>
+        <member name="T:BloodhoundHelper.Extensions">
+            <summary>
+            Extension methods for Bloodhoud Helper.
+            </summary>
+        </member>
+        <member name="M:BloodhoundHelper.Extensions.BloodhoundSearch``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Searches the provided collection for objects with property values containing the query as indicated by the BloodhoundToken attributes.
+            </summary>
+            <typeparam name="TSource">The type of the objects to search.</typeparam>
+            <param name="source">The object collection to search.</param>
+            <param name="query">The string to be searched for.</param>
+            <returns>A collection of objects which match the criteria.</returns>
+        </member>
+    </members>
+</doc>

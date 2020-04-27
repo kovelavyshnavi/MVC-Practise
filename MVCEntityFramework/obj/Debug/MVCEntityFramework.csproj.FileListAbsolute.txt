@@ -73,3 +73,13 @@ D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramewor
 D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramework.Migrations.AddDrivingLicensetoApplicationUser.resources
 D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramework.Migrations.AddPhonetoApplication.resources
 D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramework.Migrations.AddPhoneRequiredtoApplication.resources
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\Glimpse.Ado.dll
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\Glimpse.AspNet.dll
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\Glimpse.Core.dll
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\Glimpse.EF6.dll
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\Glimpse.Mvc5.dll
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramework.Migrations.AddingRentalClass.resources
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramework.Migrations.AddNumberAvaialbleToMovie.resources
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\obj\Debug\MVCEntityFramework.Migrations.UpdateAddNumberAvaialbleToMovie.resources
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\BloodhoundHelper.dll
+D:\Practise C#\MVCEntityFramework\MVCEntityFramework\bin\BloodhoundHelper.xml

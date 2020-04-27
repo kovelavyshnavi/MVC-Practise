@@ -14,7 +14,10 @@ namespace MVCEntityFramework
                         "~/Scripts/bootbox.js",
                         "~/Scripts/respond.js",
                         "~/scripts/datatables/jquery.datatables.js",
-                        "~/scripts/datatables/datatables.bootstrap.js"
+                        "~/scripts/datatables/datatables.bootstrap.js",
+                        "~/Scripts/bloodhound.js",
+                       "~/Scripts/typeahead.bundle.js",
+                        "~/Scripts/toastr.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -28,6 +31,8 @@ namespace MVCEntityFramework
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/datatables/css/datatables.bootstrap.css",
+                      "~/Content/typeahead.css",
+                       "~/Content/toastr.css",
                       "~/Content/site.css"));
 
 
